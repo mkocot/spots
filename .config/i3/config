@@ -183,10 +183,10 @@ set $indicator-color     #a0a0a0
 
 # set window colors
 #                       border             background         text                 indicator
-#client.focused          $bg-color          $bg-color          $text-color          $indicator-color
-#client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color $indicator-color
-#client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color $indicator-color
-#client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color          $indicator-color
+client.focused          $bg-color          $bg-color          $text-color          $indicator-color
+client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color $indicator-color
+client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color $indicator-color
+client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color          $indicator-color
 client.focused          #441122 #441122 #ffffff #442211   #442211
 client.focused_inactive #5f676a #5f676a #ffffff #333333   #333333
 client.unfocused        #222222 #222222 #888888 #292d2e   #222222
@@ -194,6 +194,24 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 client.background #333333
+
+
+##--- i3 coloring ---###
+# Make it clear when failed using red - otherwise set i3 colors with wal from xresources
+set_from_resource $bg           i3wm.color2 #ff0000
+set_from_resource $bg-alt       i3wm.color7 #ff0000
+set_from_resource $fg           i3wm.color7 #ff0000
+set_from_resource $fg-alt       i3wm.color2 #ff0000
+set_from_resource $hl           i3wm.color13 #ff0000
+
+# class                 border      backgr. text indicator      child_border
+#client.focused          $bg-alt     $bg-alt $fg  $bg-alt        $bg-alt
+#client.focused_inactive $bg         $bg     $fg  $bg            $bg
+#client.unfocused        $bg         $bg     $fg  $bg            $bg
+#client.urgent           $bg         $bg     $fg  $bg            $bg
+#client.placeholder      $bg         $bg     $fg  $bg            $bg
+
+#client.background $bg
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -205,13 +223,24 @@ bar {
 	font pango:monospace 9
         
 	colors {
-		#background $bg-color
+		#background $bg
 		background #000000AA
-	    	separator #757575
+	    	#separator #757575
+	    	separator $f
 		#                  border             background         text
 		focused_workspace  $bg-color          $bg-color          $text-color
 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
 		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+#background = ${xrdb:color0:#222} bg
+#background-alt = ${xrdb:color3:#222} ,,
+#foreground = ${xrdb:color7:#222} ,,
+#foreground-alt = ${xrdb:color2:#555} fg-alt
+#highlight = ${xrdb:color2:#f00} fg-alt
+#urgent f00
+
+	#	focused_workspace  $hl          $bg          $hl
+#		inactive_workspace $fg-alt $bg $fg
+#		urgent_workspace   $fg-alt   $bg   $fg
 	}
 }
 # start i3bar
@@ -270,24 +299,27 @@ bindsym $mod+n exec "/usr/bin/thunar"
 bindsym $mod+m exec "/usr/local/bin/switch-audio-port"
 
 # Autostart apps
+# Monitor setup
+exec --no-startup-id xrandr --output DVI-D-0 --primary --left-of HDMI-0
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id "compton -cC"
 exec --no-startup-id nm-applet
 exec --no-startup-id "nitrogen --restore"
-exec wal -i ~/Obrazy/wall/20180819_194740.jpg
+exec --no-startup-id wal -i ~/Obrazy/wall/20180819_194740.jpg
 # can we fetch current wallpaper?
 exec --no-startup-id "sleep 5s && kalu"
 
 # bind workspaces to screens
-workspace 1 output primary
-workspace 2 output primary
-workspace 3 output primary
-workspace 4 output primary
-workspace 5 output primary
-#workspace 6 output HDMI-0
-#workspace 7 output HDMI-0
-#workspace 8 output HDMI-0
-#workspace 9 output HDMI-0
-#workspace 10 output HDMI-0
+workspace $w1 output primary
+workspace $w2 output primary
+workspace $w3 output primary
+workspace $w4 output primary
+workspace $w5 output primary
+workspace $w6 output primary
+workspace $w7 output primary
+workspace $w8 output primary
+workspace $w9 output primary
+workspace $w10 output HDMI-0
 
 gaps inner 5
+smart_gaps on
