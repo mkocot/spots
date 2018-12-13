@@ -1,0 +1,36 @@
+! fake transparency
+URxvt.transparent: true
+URxvt.inheritPixmap: true
+URxvt.shading: 20
+!URxvt.fading:40
+
+! real transparency
+! should work but including .cache/wal/sequence overrides backgroud
+! and this drives me nut
+!urxvt*depth: 32
+!urxvt*background: rgba:0000/0000/0000/a000
+
+!URxvt.perl-lib: /usr/lib/urxvt/perl
+!URxvt.perl-ext-common: default,matcher,clipboard,url-select,selection-to-clipboard
+!URxvt.url-launcher: /usr/bin/firefox
+!URxvt.matcher.button: 1
+
+URxvt.matcher.rend.0: Uline Bold #ac40ba
+URxvt.matcher.rend.1: Bold fg5
+
+!URxvt*termName: xterm-256color
+
+URxvt*scrollTtyOutput:      false
+URxvt*scrollWithBuffer:     true
+URxvt*scrollTtyKeypress:    true
+URxvt.iso14755 : false
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+URxvt.secondaryWheel: 1
+URxvt.saveLines: 1000000
+URxvt*hlight.rend.0: fg:9 bg:6 Bold
+URxvt.letterSpace: 0
+URxvt.font: xft:Menlo:size=11,xft:DejaVu Sans Mono:size=11
+URxvt.scrollBar:true
+
+#include "nord"

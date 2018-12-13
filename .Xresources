@@ -1,92 +1,17 @@
 !Xcursor.theme: cursor-theme
 Xcursor.size: 16
 
-! ROFI Colors
-! Use extended color scheme
-!rofi.color-enabled:                  true
-! Color scheme for normal row
-!rofi.color-normal:                   argb:00000000,  #222222, argb:00000000, argb:00000000,  #a78371
-! Color scheme for urgent row
-!rofi.color-urgent:                   argb:00000000,  #F99157 , argb:00000000,  argb:00000000 , #222222
-! Color scheme for active row
-!rofi.color-active:                   argb:00000000,  #6699CC , argb:00000000,  argb:00000000 , #976490
-! Color scheme window
-!rofi.color-window:                   argb:dddfdfdf,  argb:00000000,  #222222
-! Separator style (none, dash, solid)
 rofi.separator-style: none
-
-
-!!Theme Eight
-!*background: rgb:10/10/10
-!*foreground: rgb:d3/d3/d3
-!*color0:     rgb:10/10/10
-!*color1:     rgb:cd/5c/5c
-!*color2:     rgb:2e/8b/57
-!*color3:     rgb:f0/e6/8c
-!*color4:     rgb:b0/c4/de
-!*color5:     rgb:ba/55/d3
-!*color6:     rgb:46/82/b4
-!*color7:     rgb:d3/d3/d3
-!*color8:     rgb:4d/4d/4d
-!*color9:     rgb:ff/6a/6a
-!*color10:    rgb:8f/bc/8f
-!*color11:    rgb:ff/fa/cd
-!*color12:    rgb:1e/90/ff
-!*color13:    rgb:db/70/93
-!*color14:    rgb:5f/9e/a0
-!*color15:    rgb:ff/ff/ff
-
-!Theme Twenty
-!*foreground: rgb:aa/aa/aa
-!*background: rgb:00/00/00
-!*color0:     rgb:30/34/30
-!*color1:     rgb:bf/79/79
-!*color2:     rgb:97/b2/6b
-!*color3:     rgb:cd/cd/c1
-!*color4:     rgb:86/a2/be
-!*color5:     rgb:d9/b7/98
-!*color6:     rgb:a1/b5/cd
-!*color7:     rgb:ff/ff/ff
-!*color8:     rgb:cd/b5/cd
-!*color9:     rgb:f4/a4/5f
-!*color10:    rgb:c5/f7/79
-!*color11:    rgb:ff/ff/ef
-!*color12:    rgb:98/af/d9
-!*color13:    rgb:d7/d9/98
-!*color14:    rgb:a1/b5/cd
-!*color15:    rgb:de/de/de
-
 
 ! Rofi
 rofi.color-enabled: true
 rofi.terminal:      urxvt
 
-!!Theme: Gray
-!!                  'bg',    'bord', 'sepratr'
-!rofi.color-window:  #393939, #393939, #268bd2
-!! State:           'bg',    'fg',    'bgalt', 'hlbg',  'hlfg'
-!rofi.color-normal:  #393939, #ffffff, #2c2c2c, #268bd2, #ffffff
-!rofi.color-active:  #393939, #268bd2, #2c2c2c, #268bd2, #205171
-!rofi.color-urgent:  #393939, #f3843d, #2c2c2c, #268bd2, #ffc39c
-
-!! Theme: Adapta Nokto Eta
-!!                  'bg',    'bord', 'sepratr'
-!rofi.color-window: #3a4c54, #2a373e, #c3c6c8
-!! State:           'bg',    'fg',    'bgalt', 'hlbg',  'hlfg'
-!rofi.color-normal: #455a64, #fafbfc, #455a64, #00bcd4, #fafbfc
-!rofi.color-active: #455a64, #00bcd4, #455a64, #009688, #fdf6e3
-!rofi.color-urgent: #455a64, #ff5252, #455a64, #ff5252, #fdf6e3
-
-! Theme: Cyberpunk Neon
-! #55384f
-!                  'bg',    'bord', 'sepratr'
 rofi.color-window: #5a3c54, #5a3c54, #c3c6c8
 ! State:           'bg',    'fg',    'bgalt', 'hlbg',  'hlfg'
 rofi.color-normal: #65485f, #faebbc, #5d3f57, #00bcd4, #fafbfc
 rofi.color-active: #5a3c54, #fafbfc, #5a3c54, #009688, #fde6d3
 rofi.color-urgent: #5a3c54, #ff5252, #5a3c54, #ff5252, #fde6d3
-
-
 
 Xft.dpi: 96
 Xft.antialias: true
@@ -96,88 +21,6 @@ Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
-! Cores e configs iniciais
-URxvt.letterSpace: 0
-URxvt.font: xft:Menlo:size=11,xft:DejaVu Sans Mono:size=11
-URxvt.scrollBar:true
-!URxvt.background: #002b36	!transparente
-!URxvt.foreground: #00ee96	!verde manjaro
-!URxvt.background: #6c5e5d  	
-!URxvt.foreground:  #ffa5b9  
-!rosa
-!URxvt.cursorColor: #fa5770	
+#include ".cache/wal/colors.Xresources"
 
-!URxvt.color1:  #af5f00
-!URxvt.color2:  #fa5770
-!URxvt.color3:  #af5fff
-!URxvt.color4:  #fa57ff
-
-
-!URxvt.color0: #1c1f24
-!
-!URxvt.color1: #ff6c6b
-!URxvt.color2: #98be65
-!URxvt.color3: #DA8548
-!URxvt.color4: #51afef
-!URxvt.color5: #c678dd
-!URxvt.color6: #5699AF
-!
-!URxvt.color7: #202328
-!URxvt.color8: #5B6268
-!
-!URxvt.color9: #da8548
-!URxvt.color10: #4db5bd
-!URxvt.color11: #ECBE7B
-!URxvt.color12: #2257A0
-!URxvt.color13: #a9a1e1
-!URxvt.color14: #46D9FF
-!
-!URxvt.color15: #DFDFDF
-!
-!URxvt.color17: #000F1F
-!URxvt.color18: #210000
-!URxvt.color19: #171600
-!
-!URxvt.background: #282C34
-!URxvt.foreground: #bbc2cf
-!URxvt.cursorColor: #5B6268
-
-
-!URxvt.foreground: #abb2bf
-!!foreground_bold = #abb2bf
-!!URxvt.cursorC          =
-!URxvt.background: #282c34
-!
-!!# black
-!URxvt.color0:#282c34
-!URxvt.color8: #5c6370
-!
-!!# red
-!URxvt.color1: #e06c75
-!URxvt.color9: #be5046
-!
-!!# green
-!URxvt.color2: #98c379
-!URxvt.color10:#7a9f60
-!
-!!# yellow
-!URxvt.color3: #e5c07b
-!URxvt.color11:#d19a66
-!
-!!# blue
-!URxvt.color4: #61afef
-!URxvt.color12:#3b84c0
-!
-!!# magenta
-!URxvt.color5: #c678dd
-!URxvt.color13:#9a52af
-!
-!!# cyan
-!URxvt.color6: #56b6c2
-!URxvt.color14:#3c909b
-!
-!!# white
-!URxvt.color7: #abb2bf
-!URxvt.color15:#828997
 #include ".config/urxvt/config"
-#include ".config/urxvt/nord"
