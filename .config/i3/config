@@ -93,10 +93,10 @@ bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
-set $w1 "1. >_"
-set $w2 "2. www"
-set $w3 "3. android"
-set $w4 "4. mail"
+set $w1 "1: >_"
+set $w2 "2: ide"
+set $w3 "3: www"
+set $w4 "4: mail"
 set $w5 5
 set $w6 6
 set $w7 7
@@ -129,9 +129,14 @@ bindsym $mod+Shift+9 move container to workspace $w9
 bindsym $mod+Shift+0 move container to workspace $w10
 
 # assingn workspaces
-assign [class="Firefox"] $w2
+assign [class="Firefox"] $w3
 assign [class="Thunderbird"] $w4
-assign [class="jetbrains-studio"] $w3
+assign [class="jetbrains-studio"] $w2
+# vscode - build from headmelted
+assign [class="Code - OSS (headmelted)"] $w2
+# vscode from M
+assign [class="Code"] $w2
+assign [class="VSCodium"] $w2
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -143,8 +148,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # lock
-#bindsym $mod+Shift+x exec i3lock --color 475263
-bindsym $mod+Shift+x exec i3lock -i ~/Obrazy/i3lock.png
+bindsym $mod+Shift+x exec ~/.config/i3/lockscreen.sh
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -174,17 +178,17 @@ bindsym $mod+r mode "resize"
 
 
 #set $bg-color            #2f343f
-set_from_resource $bg-color i3wm.color2 #2f343f
-set $inactive-bg-color   #2f343f
+set_from_resource $bg-color            i3wm.color2 #2f343f
+set               $inactive-bg-color               #2f343f
 #set $text-color          #f3f4f5
-set_from_resource $text-color i3wm.color7 #f3f4f5
-set $inactive-text-color #676e7d
-set $urgent-bg-color     #e53935
-set $indicator-color     #a0a0a0
-set_from_resource $color8 i3wm.color8 #ff0000
-set_from_resource $color1 i3wm.color1 #ff0000
-set_from_resource $color5 i3wm.color5 #ff0000
-set_from_resource $color0 i3wm.color0 #ff0000
+set_from_resource $text-color          i3wm.color7 #f3f4f5
+set               $inactive-text-color             #676e7d
+set               $urgent-bg-color                 #e53935
+set               $indicator-color                 #a0a0a0
+set_from_resource $color8              i3wm.color8 #ff0000
+set_from_resource $color1              i3wm.color1 #ff0000
+set_from_resource $color5              i3wm.color5 #ff0000
+set_from_resource $color0              i3wm.color0 #ff0000
 
 # set window colors
 #                       border             background         text                 indicator
@@ -197,14 +201,15 @@ set_from_resource $color0 i3wm.color0 #ff0000
 #client.unfocused        #222222 #222222 #888888 #292d2e   #222222
 #client.urgent           #2f343a #900000 #ffffff #900000   #900000
 #client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-#                       border  back    text    
-client.focused          #441122 $color0 $color5 #442211   #442211
-client.focused_inactive #5f676a $text-color $color8 #333333   #333333
-client.unfocused        #222222 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
-client.background #333333
+#                       border  back    text    
+client.focused          #441122 $color0     $color5 #442211 #442211
+client.focused_inactive #5f676a $text-color $color8 #333333 #333333
+client.unfocused        #222222 #222222     #888888 #292d2e #222222
+client.urgent           #2f343a #900000     #ffffff #900000 #900000
+client.placeholder      #000000 #0c0c0c     #ffffff #000000 #0c0c0c
+
+client.background       #333333
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -219,9 +224,9 @@ bar {
 	colors {
 		#background $bg-color
 		background #000000AA
-	    	separator #757575
+	    separator #757575
 		#                  border             background         text
-		focused_workspace  $bg-color          #441122          $text-color
+		focused_workspace  $bg-color          #441122            $text-color
 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
 		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
 	}
@@ -259,21 +264,21 @@ bindsym $mod+XF86AudioLowerVolume exec amixer -D pulse sset Master 1%- && pkill 
 # mute
 bindsym XF86AudioMute exec amixer sset Master toggle && killall -USR1 i3blocks
 
-#bindsym XF86AudioPlay exec playerctl play
-#bindsym XF86AudioPause exec playerctl pause
-#bindsym XF86AudioNext exec playerctl next
-#bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
-bindsym XF86AudioPlay exec mocp --toggle-pause
-bindsym XF86AudioPause exec mocp --toggle-pause
-bindsym XF86AudioStop exec mocp --togle-pause
-bindsym XF86AudioNext exec mocp --next
-bindsym XF86AudioPrev exec mocp --previous
+#bindsym XF86AudioPlay exec mocp --toggle-pause
+#bindsym XF86AudioPause exec mocp --toggle-pause
+#bindsym XF86AudioStop exec mocp --togle-pause
+#bindsym XF86AudioNext exec mocp --next
+#bindsym XF86AudioPrev exec mocp --previous
 
-bindsym $mod+F5 exec mocp --toggle-pause
-bindsym $mod+F6 exec mocp --stop
-bindsym $mod+F7 exec mocp --previous
-bindsym $mod+F8 exec mocp --next
+#bindsym $mod+F5 exec mocp --toggle-pause
+#bindsym $mod+F6 exec mocp --stop
+#bindsym $mod+F7 exec mocp --previous
+#bindsym $mod+F8 exec mocp --next
 
 # App shortcuts
 bindsym $mod+w exec "/usr/bin/firefox"
@@ -289,7 +294,8 @@ exec --no-startup-id nm-applet
 ##exec --no-startup-id "nitrogen --restore"
 #exec_always wal -i ~/Obrazy/wall/ -st
 exec_always --no-startup-id feh --randomize --bg-fill ~/Obrazy/wall/
-exec --no-startup-id wal --theme base16-nord
+exec --no-startup-id wal --theme nord -a 128
+# base16-nord seems to have odd shift (reversed colours)
 # can we fetch current wallpaper?
 ## exec --no-startup-id "sleep 5s && kalu"
 
@@ -307,4 +313,3 @@ workspace $w5 output primary
 
 gaps inner 5
 smart_gaps on
-workspace $w1 layout tabbed
