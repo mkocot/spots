@@ -1,0 +1,41 @@
+#if __has_include(".extend.Xresources")
+#include ".extend.Xresources"
+#endif
+
+! ^ The above lines are no comments!
+! Leave them as they are if a file ~/.extend.Xresources is being used on your system.
+! config can be added there or also here below.
+! For comments use "!"
+
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+!Xcursor.theme: cursor-theme
+Xcursor.size: 16
+
+rofi.separator-style: none
+
+! Rofi
+rofi.color-enabled: true
+rofi.terminal:      urxvt
+
+!rofi.color-window: #5a3c54, #5a3c54, #c3c6c8
+!! State:           'bg',    'fg',    'bgalt', 'hlbg',  'hlfg'
+!rofi.color-normal: #65485f, #faebbc, #5d3f57, #00bcd4, #fafbfc
+!rofi.color-active: #5a3c54, #fafbfc, #5a3c54, #009688, #fde6d3
+!rofi.color-urgent: #5a3c54, #ff5252, #5a3c54, #ff5252, #fde6d3
+
+! this is our base colorscheme
+#include ".config/xschemes/nord"
+
+#if __has_include(".cache/wal/colors.Xresources")
+#    include ".cache/wal/colors.Xresources"
+#endif
+
+
+#include ".config/urxvt/config"
