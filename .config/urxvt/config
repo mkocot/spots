@@ -39,3 +39,5 @@ URxvt*scrollBar: false
 URxvt*scrollBar_right: true
 URxvt*scrollBar_floating: true
 URxvt*print-pipe:  cat > $HOME/$(echo urxvt.dump.$(date +'%Y%M%d%H%m%S'))
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
