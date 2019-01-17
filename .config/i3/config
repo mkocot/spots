@@ -240,7 +240,7 @@ bar {
 	position top
 	i3bar_command i3bar -t
 	status_command i3status
-	font pango:monospace,FontAwesome 9
+	font pango:monospace,FontAwesome 8
         
 	colors {
 		#background $bg-color
