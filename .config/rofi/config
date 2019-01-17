@@ -10,3 +10,4 @@ rofi.terminal:      urxvt
 !rofi.color-active: #5a3c54, #fafbfc, #5a3c54, #009688, #fde6d3
 !rofi.color-urgent: #5a3c54, #ff5252, #5a3c54, #ff5252, #fde6d3
 
+rofi.theme: ~/.cache/wal/colors-rofi-light.rasi
