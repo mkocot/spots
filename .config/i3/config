@@ -43,6 +43,7 @@ bindsym $mod+Shift+q kill
 # installed.
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+w exec --no-startup-id rofi -show window
 
 
 # change focus
@@ -223,7 +224,7 @@ set_from_resource $color9              i3wm.color9 #ff0000
 
 #                       border  back        text        indicator something (border when focused?)
 #client.focused         #441122 $color0     $color5     #442211    #442211
-client.focused          $color0 $color0     $color7 #FF0000    $color0
+client.focused          #000000  #000000DD     $color7 #FF0000    $color0
 client.focused_inactive $color0 $color0     #888888     #333333    #333333
 #client.unfocused       #222222 #222222     #888888     #292d2e    #222222
 client.unfocused        $transparent #000000CC     #888888     #292d2e    #222222
@@ -304,7 +305,7 @@ bindsym XF86AudioPrev exec playerctl previous
 #bindsym $mod+F8 exec mocp --next
 
 # App shortcuts
-bindsym $mod+w exec "/usr/bin/firefox"
+bindsym $mod+F3 exec "/usr/bin/firefox"
 bindsym $mod+n exec "/usr/bin/thunar"
 
 # Redirect sound to headphones
