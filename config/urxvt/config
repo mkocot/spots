@@ -1,8 +1,9 @@
 ! fake transparency
 URxvt.transparent: true
 URxvt.inheritPixmap: true
-URxvt.shading: 20
+URxvt.shading: 30
 URxvt.fading:40
+URxvt*blurRadius:                     10x10
 
 ! real transparency
 !URxvt*depth: 32
@@ -33,7 +34,9 @@ URxvt.secondaryWheel: 1
 URxvt.saveLines: 1000000
 !URxvt*hlight.rend.0: fg:9 bg:6 Bold
 URxvt.letterSpace: 0
-URxvt.font: xft:Menlo:size=9
+!URxvt.font: xft:Menlo:size=9
+!URxvt.font: xft:Meslo:size=9
+URxvt.font: xft:Meslo LG M:size=8
 URxvt*skipScroll: true
 URxvt*scrollBar: false
 URxvt*scrollBar_right: true

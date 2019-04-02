@@ -152,6 +152,9 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # lock
 bindsym $mod+Shift+x exec ~/.config/i3/lockscreen.sh
 
+# select wallpaper
+bindsym $mod+b exec --no-startup-id  ~/.config/i3/bgselect.sh
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -315,12 +318,19 @@ bindsym $mod+m exec "/usr/local/bin/switch-audio-port"
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec_always --no-startup-id "compton -cC"
 exec --no-startup-id nm-applet
+
+# screensaver
+exec --no-startup-id xscreensaver -no-splash
+
 ##exec --no-startup-id "nitrogen --restore"
 #exec_always wal -i ~/Obrazy/wall/ -st
-exec_always --no-startup-id feh --randomize --bg-fill ~/Obrazy/wall/
-exec --no-startup-id wal --theme nord -a 128
+exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/wall/
+#exec --no-startup-id wal --theme nord -a 128
+exec --no-startup-id wal --theme base16-onedark -a 128
 # fix for too slow mouse
-exec --no-startup-id xinput set-prop 'Logitech USB Optical Mouse' 'libinput Accel Speed' 1.0
+#exec --no-startup-id xinput set-prop 'Logitech USB Optical Mouse' 'libinput Accel Speed' 1.0
+# fix for too fast mouse
+exec --no-startup-id xinput set-prop 'Logitech USB Optical Mouse' 'libinput Accel Speed' -0.2
 # base16-nord seems to have odd shift (reversed colours)
 # can we fetch current wallpaper?
 ## exec --no-startup-id "sleep 5s && kalu"

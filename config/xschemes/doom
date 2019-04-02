@@ -1,0 +1,27 @@
+*.color0: #1c1f24 !// black
+	 
+*.color1: #ff6c6b !// dark red
+*.color2: #98be65 !// dark green
+*.color3: #DA8548 !// dark orange
+*.color4: #51afef !// dark blue
+*.color5: #c678dd !// dark magenta
+*.color6: #5699AF !// dark cyan 
+
+*.color7: #202328 !// grey   
+*.color8: #5B6268 !// dark grey
+
+*.color9: #da8548 !// red
+*.color10: #4db5bd !// green
+*.color11: #ECBE7B !// orange
+*.color12: #2257A0 !// blue
+*.color13: #a9a1e1 !// magenta
+*.color14: #46D9FF !// cyan
+
+*.color15: #DFDFDF !// white
+   
+*.color17: #000F1F !// dark dark navy blue
+*.color18: #210000 !// dark dark red
+*.color19: #171600 !// dark dark yellow
+   
+*.background: #282C34
+*.foreground: #bbc2cf
