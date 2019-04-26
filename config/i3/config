@@ -29,6 +29,8 @@ default_border none
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+# disable changing focus by mouse move
+focus_follows_mouse no
 
 # start a terminal
 bindsym $mod+Return exec urxvt
@@ -347,5 +349,5 @@ workspace $w5 output primary
 #workspace 9 output HDMI-0
 #workspace 10 output HDMI-0
 
-gaps inner 5
+gaps inner 2
 smart_gaps on
