@@ -17,8 +17,8 @@ set $mod Mod4
 font pango:monospace 9
 #font pango:Noto Mono Regular, Awesome 8
 # thin borders
-hide_edge_borders both
-default_border none
+hide_edge_borders smart
+default_border pixel 1
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -105,8 +105,8 @@ set $w5 5
 set $w6 6
 set $w7 7
 set $w8 8
-set $w9 9
-set $w10 10
+set $w9 "9: tmux"
+set $w10 "10: jump"
 
 # switch to workspace
 bindsym $mod+1 workspace $w1
@@ -140,6 +140,7 @@ assign [class="jetbrains-studio"] $w2
 assign [class="Code - OSS (headmelted)"] $w2
 # vscode from M
 assign [class="Code"] $w2
+assign [class="code-oss"] $w2
 assign [class="VSCodium"] $w2
 
 # reload the configuration file
@@ -186,6 +187,7 @@ bindsym $mod+r mode "resize"
 
 #set $bg-color            #2f343f
 set               $transparent                     #000000AA
+set		  $semi-transparent		   #000000DD
 set_from_resource $bg-color            i3wm.background #2f343f
 set               $inactive-bg-color               #2f343f
 #set $text-color          #f3f4f5
@@ -227,14 +229,12 @@ set_from_resource $color9              i3wm.color9 #ff0000
 #client.urgent           #2f343a #900000 #ffffff #900000   #900000
 #client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
-#                       border  back        text        indicator something (border when focused?)
-#client.focused         #441122 $color0     $color5     #442211    #442211
-client.focused          #000000  #000000DD     $color7 #FF0000    $color0
-client.focused_inactive $color0 $color0     #888888     #333333    #333333
-#client.unfocused       #222222 #222222     #888888     #292d2e    #222222
-client.unfocused        $transparent #000000CC     #888888     #292d2e    #222222
-client.urgent           #2f343a #900000     #ffffff     #900000    #900000
-client.placeholder      #000000 #0c0c0c     #ffffff     #000000    #0c0c0c
+#                       border       back        text        indicator something (border when focused?)
+client.focused          $transparent #000000DD     $color7 #FF0000    $color2
+client.focused_inactive $color0	     $color0     #888888     #333333    $color0
+client.unfocused        $transparent #000000CC     #888888     #292d2e    $color0
+client.urgent           #2f343a      #900000     #ffffff     #900000    #900000
+client.placeholder      $color4      #0c0c0c     #ffffff     #000000    #0c0c0c
 
 client.background       #333333
 
@@ -249,15 +249,14 @@ bar {
 	font pango:monospace,FontAwesome 8
         
 	colors {
-		#background $bg-color
-		background $transparent
-	    separator #757575
+		background $semi-transparent
+	    	separator #757575
 		#                   border             background         text
 		#focused_workspace  $bg-color          #441122            $text-color
-		focused_workspace   $transparent       $transparent       $text-color
+		focused_workspace   $semi-transparent       $semi-transparent       $text-color
 		#inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-		inactive_workspace  $transparent       $transparent       $inactive-text-color
-		urgent_workspace    $transparent       $transparent       $color1
+		inactive_workspace  $semi-transparent       $semi-transparent       $inactive-text-color
+		urgent_workspace    $semi-transparent       $semi-transparent       $color1
 	}
 }
 # start i3bar
@@ -316,6 +315,9 @@ bindsym $mod+n exec "/usr/bin/thunar"
 # Redirect sound to headphones
 bindsym $mod+m exec "/usr/local/bin/switch-audio-port"
 
+# screen configuration
+exec_always --no-startup--id ~/.config/i3/screens.sh
+
 # Autostart apps
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec_always --no-startup-id "compton -cC"
@@ -343,11 +345,12 @@ workspace $w2 output primary
 workspace $w3 output primary
 workspace $w4 output primary
 workspace $w5 output primary
-#workspace 6 output HDMI-0
-#workspace 7 output HDMI-0
-#workspace 8 output HDMI-0
-#workspace 9 output HDMI-0
+workspace $w6 output primary
+workspace $w7 output primary
+workspace $w8 output primary
+workspace $w9 output primary
 #workspace 10 output HDMI-0
 
 gaps inner 2
+#gaps outer 2
 smart_gaps on
