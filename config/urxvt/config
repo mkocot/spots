@@ -1,8 +1,7 @@
 ! fake transparency
 URxvt.transparent: true
-URxvt.inheritPixmap: true
-URxvt.shading: 30
-URxvt.fading:40
+URxvt.shading: 50
+URxvt.fading: 0
 URxvt*blurRadius:                     10x10
 
 ! real transparency
@@ -13,16 +12,9 @@ URxvt*blurRadius:                     10x10
 !#ifdef nord0
 !URxvt*background: [90]nord0
 !#endif
+!URxvt.backround: #000000
 
 URxvt*fadeColor: [90]#000000
-
-!URxvt.perl-lib: /usr/lib/urxvt/perl
-!URxvt.perl-ext-common: default,matcher,clipboard,url-select,selection-to-clipboard
-!URxvt.url-launcher: /usr/bin/firefox
-!URxvt.matcher.button: 1
-
-!URxvt.matcher.rend.0: Uline Bold #ac40ba
-!URxvt.matcher.rend.1: Bold fg5
 
 URxvt*scrollTtyOutput:      false
 URxvt*scrollWithBuffer:     true
@@ -31,16 +23,13 @@ URxvt.iso14755 : false
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
 URxvt.secondaryWheel: 1
-URxvt.saveLines: 1000000
+URxvt.saveLines: 10000
 !URxvt*hlight.rend.0: fg:9 bg:6 Bold
 URxvt.letterSpace: 0
-!URxvt.font: xft:Menlo:size=9
-!URxvt.font: xft:Meslo:size=9
 URxvt.font: xft:Meslo LG M:size=8
 URxvt*skipScroll: true
 URxvt*scrollBar: false
 URxvt*scrollBar_right: true
 URxvt*scrollBar_floating: true
-URxvt*print-pipe:  cat > $HOME/$(echo urxvt.dump.$(date +'%Y%M%d%H%m%S'))
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
