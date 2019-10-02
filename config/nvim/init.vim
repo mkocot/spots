@@ -1,6 +1,11 @@
 if &compatible
   set nocompatible
 endif
+
+" this is some foot-up feature reading all history of opened files on EXIT
+" and preventing exit when one of the file in history is on not mounted (timeouted) NFS share
+set shada="NONE"
+
 filetype off
 " append to runtime path
 set rtp+=/usr/share/vim/vimfiles
