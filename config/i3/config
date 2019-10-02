@@ -134,6 +134,8 @@ bindsym $mod+Shift+0 move container to workspace $w10
 
 # assingn workspaces
 assign [class="Firefox"] $w3
+# and now it's suddenly lowercase
+assign [class="firefox"] $w3
 assign [class="Thunderbird"] $w4
 assign [class="jetbrains-studio"] $w2
 # vscode - build from headmelted
