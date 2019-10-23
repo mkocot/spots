@@ -330,9 +330,11 @@ exec --no-startup-id xscreensaver -no-splash
 
 ##exec --no-startup-id "nitrogen --restore"
 #exec_always wal -i ~/Obrazy/wall/ -st
-exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/wall/
-#exec --no-startup-id wal --theme nord -a 128
-exec --no-startup-id wal --theme base16-onedark -a 128
+exec_always --no-startup-id ~/.config/i3/bgselect.sh --randomize
+
+#exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/wall/
+#exec --no-startup-id wal --theme base16-onedark -a 128
+
 # fix for too slow mouse
 #exec --no-startup-id xinput set-prop 'Logitech USB Optical Mouse' 'libinput Accel Speed' 1.0
 # fix for too fast mouse
