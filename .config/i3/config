@@ -94,9 +94,9 @@ bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
-set $w1 "1. >_"
-set $w2 "2. www"
-set $w3 "3. mail"
+set $w1 "1: >_"
+set $w2 "2: www"
+set $w3 "3: mail"
 set $w4 4
 set $w5 5
 set $w6 6
@@ -131,7 +131,6 @@ bindsym $mod+Shift+0 move container to workspace $w10
 
 # assingn workspaces
 assign [class="Firefox"] $w2
-assign [class="URxvt"] $w1
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -173,13 +172,13 @@ bindsym $mod+r mode "resize"
 
 
 #set $bg-color            #2f343f
-set_from_resource $bg-color i3wm.color2 #2f343f
-set $inactive-bg-color   #2f343f
+set_from_resource	$bg-color 		i3wm.color2 	#2f343f
+set 			$inactive-bg-color   			#2f343f
 #set $text-color          #f3f4f5
-set_from_resource $text-color i3wm.color7 #f3f4f5
-set $inactive-text-color #676e7d
-set $urgent-bg-color     #e53935
-set $indicator-color     #a0a0a0
+set_from_resource 	$text-color 		i3wm.color7 	#f3f4f5
+set 			$inactive-text-color 			#676e7d
+set 			$urgent-bg-color     			#e53935
+set 			$indicator-color     			#a0a0a0
 
 # set window colors
 #                       border             background         text                 indicator
@@ -257,6 +256,9 @@ bar {
 #   }
 #}
 
+# Disable title bar
+new_window pixel 4
+
 # floating windows
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Kalu"] floating enable
@@ -300,9 +302,9 @@ bindsym $mod+m exec "/usr/local/bin/switch-audio-port"
 
 # Autostart apps
 # Monitor setup
-exec --no-startup-id xrandr --output DVI-D-0 --primary --left-of HDMI-0
+exec --no-startup-id xrandr --output DP-0.8 --primary --left-of DVI-D-0
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id "compton -cC"
+exec --no-startup-id "picom -cC"
 exec --no-startup-id nm-applet
 exec --no-startup-id "nitrogen --restore"
 exec --no-startup-id wal -i ~/Obrazy/wall/20180819_194740.jpg
@@ -321,5 +323,5 @@ workspace $w8 output primary
 workspace $w9 output primary
 workspace $w10 output HDMI-0
 
-gaps inner 5
+gaps inner 1
 smart_gaps on
