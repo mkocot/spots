@@ -318,7 +318,7 @@ bindsym $mod+n exec "/usr/bin/thunar"
 bindsym $mod+m exec "/usr/local/bin/switch-audio-port"
 
 # screen configuration
-exec_always --no-startup--id ~/.config/i3/screens.sh
+exec_always --no-startup-id ~/.config/i3/screens.sh
 
 # Autostart apps
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
