@@ -38,3 +38,4 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 #    include "alphaAdjust"
 #endif
 
+URxvt.perl-lib: perl/
