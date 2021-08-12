@@ -135,9 +135,6 @@ assign [class="Code"] $w2
 assign [class="code-oss"] $w2
 assign [class="VSCodium"] $w2
 
-# temporary solution for "chat" opening on random workspaces
-# disadvantage: any window with that title from firefox will go to $w4
-for_window [class="firefox" instance="Navigator" title="Korbank - Research - Mozilla Firefox"] move to workspace $w4
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
@@ -217,7 +214,7 @@ client.unfocused        $transparent #000000CC #888888 #292d2e   #222222
 client.urgent           #2f343a      #900000   #ffffff #900000   #900000
 client.placeholder      #000000      #0c0c0c   #ffffff #000000   #0c0c0c
 
-client.background       $000000
+client.background       #000000
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -275,12 +272,12 @@ bindsym XF86AudioPrev exec playerctl previous
 #bindsym $mod+F7 exec mocp --previous
 #bindsym $mod+F8 exec mocp --next
 
-# Redirect sound to headphones
-bindsym $mod+m exec "/usr/local/bin/switch-audio-port"
+
+# hardcode 30% volume, not time to have fun with PA duckery
+exec --no-startup-id amixer sset Master 30%
 
 # Autostart apps
 #exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec_always --no-startup-id ~/.config/i3/volume.sh
 exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 exec --no-startup-id nm-applet
 ##exec --no-startup-id "nitrogen --restore"
@@ -289,9 +286,13 @@ set $wallpapers /usr/share/backgrounds/
 #exec_always --no-startup-id wal --theme hybrid-material -a 60
 exec_always --no-startup-id wal --theme pastel -a 60
 exec_always --no-startup-id feh --randomize --bg-fill $wallpapers
+# disable monitor auto off
+exec_always --no-startup-id xset s off -dpms
 exec --no-startup-id picom -b
 # base16-nord seems to have odd shift (reversed colours)
 ## exec --no-startup-id "sleep 5s && kalu"
+# fix naught mouse
+exec --no-startup-id "xinput set-prop 'ASUS GLADIUS' 'libinput Accel Speed' -0.3"
 
 # bind workspaces to screens
 workspace $w1 output primary
