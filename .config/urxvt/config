@@ -32,8 +32,8 @@ URxvt.secondaryScroll: 0
 URxvt.secondaryWheel: 1
 URxvt.saveLines: 1000000
 !URxvt*hlight.rend.0: fg:9 bg:6 Bold
-URxvt.letterSpace: 0
-URxvt.font: xft:Hack:size=9
+URxvt.letterSpace: -1
+URxvt.font: xft:Cascadia Code:size=10
 URxvt*skipScroll: true
 URxvt*scrollBar: false
 URxvt*scrollBar_right: true
