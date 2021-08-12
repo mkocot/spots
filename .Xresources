@@ -28,6 +28,10 @@ Xcursor.size: 16
 
 #include ".config/urxvt/config"
 
+#if __has_include(".config/zutty/config")
+#    include ".config/zutty/config"
+#endif
+
 #if __has_include(".config/xst/config")
 #    include ".config/xst/config"
 #endif
